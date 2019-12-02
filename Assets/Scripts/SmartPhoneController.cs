@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class SmartPhoneController : MonoBehaviour
 {
     public static SmartPhoneController instancia = null;
-    public GameObject PanelDinheiro,PanelGps,PanelIFood, AppDinheiro, AppGPS,AppIFood;
+    public GameObject Panel;
+    public Text NomeApp, TextoValor;
+    public GameObject Seta;
     sbyte velocidade;
     float PosYBaixo;
     float PosYAlto;
@@ -22,12 +24,7 @@ public class SmartPhoneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PanelDinheiro.SetActive(false);
-        PanelGps.SetActive(false);
-        PanelIFood.SetActive(false);
-        AppDinheiro.SetActive(true);
-        AppGPS.SetActive(true);
-        AppIFood.SetActive(true);
+        Panel.SetActive(false);
         velocidade = 10;
         PosYAlto = 461.42f;
         PosYBaixo = -303.12f;
@@ -62,55 +59,36 @@ public class SmartPhoneController : MonoBehaviour
             }
         }
 
+
     }
 
-
-    public void AtivaPaineDinheiro()
+    public void ButtomDinheiro()
     {
-        PanelDinheiro.SetActive(true);
-        AppGPS.SetActive(false);
-        AppIFood.SetActive(false);
-      
-
+        Panel.SetActive(true);
+        NomeApp.text = "Seu Dinheiro";
+        TextoValor.text = "$";
+        Seta.SetActive(false);
     }
 
-    public void DesativaPainelDinheiro()
+    public void ButtomVoltar()
     {
-        PanelDinheiro.SetActive(false);
-        AppGPS.SetActive(true);
-        AppIFood.SetActive(true);
-        AppDinheiro.SetActive(true);
+        Panel.SetActive(false);
     }
 
-    public void AtivaPaineGPS()
+    public void ButtomIFood()
     {
-        PanelGps.SetActive(true);
-        AppIFood.SetActive(false);
-        AppGPS.SetActive(true);
+        Panel.SetActive(true);
+        NomeApp.text = "Entregas";
+        TextoValor.text = "";
+        Seta.SetActive(false);
     }
 
-    public void DesativaPainelGPS()
+    public void ButtomGPS()
     {
-        PanelGps.SetActive(false);
-        AppDinheiro.SetActive(true);
-        AppIFood.SetActive(true);
-        AppGPS.SetActive(true);
+        Panel.SetActive(true);
+        NomeApp.text = "Rota";
+        TextoValor.text = "";
+        Seta.SetActive(true);
     }
 
-    public void AtivaPainelIFood()
-    {
-        PanelIFood.SetActive(true);
-        AppGPS.SetActive(false);
-        AppDinheiro.SetActive(false);
-        
-
-    }
-
-    public void DesativaPainelIFood()
-    {
-        PanelIFood.SetActive(false);
-        AppGPS.SetActive(true);
-        AppDinheiro.SetActive(true);
-        
-    }
 }
