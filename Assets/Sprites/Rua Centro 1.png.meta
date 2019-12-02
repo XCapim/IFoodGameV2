@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 5147aa2f5bec11540a6aabad5285c61c
+guid: f3f9c6d95c8b0844781fe8e303998c12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2083772110256284854
-    second: Rua Centro_0
+      213: 7814111659668981613
+    second: Rua Centro 1_0
   - first:
-      213: -8635528026793274966
-    second: Rua Centro_1
+      213: 6174924596513316345
+    second: Rua Centro 1_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rua Centro_0
+      name: Rua Centro 1_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 594
-        width: 500
-        height: 500
+        x: 103
+        y: 1762
+        width: 1388
+        height: 1428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a90807a03fb458f4bae529b764269f69
-      internalID: -2083772110256284854
+      spriteID: 23f13d66f94905341a0d9bdec18a4e53
+      internalID: 7814111659668981613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rua Centro_1
+      name: Rua Centro 1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
+        x: 98
+        y: 101
+        width: 1388
+        height: 1427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f786014bd2657d48b1e9df07e5c4058
-      internalID: -8635528026793274966
+      spriteID: 10ce5121685249a4b853a7d304255553
+      internalID: 6174924596513316345
       vertices: []
       indices: 
       edges: []
