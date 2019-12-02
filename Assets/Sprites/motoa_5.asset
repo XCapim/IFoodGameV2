@@ -6,7 +6,7 @@ Sprite:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: motoa_4
+  m_Name: motoa_5
   m_Rect:
     serializedVersion: 2
     x: 768.6827
@@ -22,7 +22,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    ed47cc24a827f4e47a0e910a580188fe: -4225239024048319313
+    2074a111d2d2f2c4eb7fbcb8fbba92ed: 21300000
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
