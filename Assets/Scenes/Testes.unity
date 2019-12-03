@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 348036257}
   m_Layer: 0
   m_Name: New Sprite (2)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1230,7 +1230,7 @@ GameObject:
   - component: {fileID: 706456697}
   m_Layer: 0
   m_Name: New Sprite (1)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1406,7 +1406,7 @@ GameObject:
   - component: {fileID: 789495777}
   m_Layer: 0
   m_Name: New Sprite (6)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2237,7 +2237,7 @@ GameObject:
   - component: {fileID: 1579454334}
   m_Layer: 0
   m_Name: New Sprite (5)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2350,7 +2350,7 @@ GameObject:
   - component: {fileID: 1620769271}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2457,7 +2457,7 @@ GameObject:
   - component: {fileID: 1651616566}
   m_Layer: 0
   m_Name: New Sprite (3)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3056,7 +3056,7 @@ GameObject:
   - component: {fileID: 2134086941}
   m_Layer: 0
   m_Name: New Sprite (4)
-  m_TagString: Untagged
+  m_TagString: predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
