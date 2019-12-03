@@ -29,29 +29,31 @@ public class PlayerController : MonoBehaviour
         Speed = 0f;
         Curva = 100f;
         anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
-        Debug.Log(Speed);
+        //Debug.Log(Input.GetAxis("Horizontal")+Input.GetAxis("Vertical"));
 
+        
 
-        if (Input.GetAxis("Vertical")>=0.1f)
+        if (Input.GetAxis("Vertical")>0f)
         {   
             Speed = 10f;
             rb.velocity = transform.up * Speed;
             SpawnandoFumaca();
 
-            if(Input.GetAxis("Vertical") >= 1 && Parado==true)
+            if(Input.GetAxis("Vertical") >0f && Parado==true)
             {
                 GameObject Fumaca = Instantiate(Resources.Load("Fumaca"),transform.position, Quaternion.identity) as GameObject;
                 Parado = false;
             }
         }
 
-        if (Input.GetAxis("Vertical") <= -0.1f)
+        else if (Input.GetAxis("Vertical") < 0f)
         {
             Speed = -5f;
             rb.velocity = transform.up * Speed;
@@ -68,23 +70,31 @@ public class PlayerController : MonoBehaviour
            
         
     
-        if (Input.GetAxis("Horizontal") >= 0.1f)
+        if (Input.GetAxis("Horizontal") > 0f)
         {
             anim.SetBool("Esqueda", false);
             anim.SetBool("Direita", true);
+            //transform.rotation = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
             transform.Rotate(new Vector3(0,0,-1)* Time.deltaTime* Curva,Space.World);
+            Debug.Log("TESTEDireita");
+
         }
-        else if (Input.GetAxis("Horizontal") <= -0.1f)
+        else if (Input.GetAxis("Horizontal") < 0f)
         {
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", true);
             transform.Rotate(new Vector3(0, 0,1) * Time.deltaTime * Curva,Space.World);
+            Debug.Log("TESTE");
+
         }
 
-        if (Input.GetAxis("Horizontal") == 0)
+        else if (Input.GetAxis("Horizontal") == 0)
         {
              anim.SetBool("Direita", false);
              anim.SetBool("Esqueda", false);
+            transform.Rotate(new Vector3(0, 0, 0), Space.Self);
+            //transform.localEulerAngles = new Vector3(0, 0, );
+            
         }
        
       
@@ -118,15 +128,26 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+
         if (collision.gameObject.CompareTag("predio"))
         {
 
-            Speed = 0;
-            rb.AddForce(Vector2.right * 150f);
+
+            
+
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        //transform.Rotate(0f, 0f, 0f);
+    }
+
+
 
 
 
