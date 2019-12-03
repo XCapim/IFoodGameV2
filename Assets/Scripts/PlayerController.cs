@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
 
+        Debug.Log(Speed);
 
         if (Input.GetAxis("Vertical")>=0.1f)
         {   
