@@ -86,6 +86,14 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Esqueda", false);
         }
 
+        if (Input.GetButton("Fire3"))
+        {
+            anim.SetBool("LancaDir", true);
+        }
+        else
+        {
+            anim.SetBool("LancaDir", false);
+        }
        
       
     }
