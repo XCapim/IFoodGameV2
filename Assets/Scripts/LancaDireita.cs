@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LancaDireita : MonoBehaviour
 {
-   bool AtivaTempoPizza;
-   float TempoPizza,velocidade;
+     bool AtivaTempoPizza;
+    float TempoPizza,velocidade;
+    public AudioSource audio;
+    public AudioClip jogou;
 
 
     // Start is called before the first frame update
@@ -33,6 +35,8 @@ public class LancaDireita : MonoBehaviour
 
             if (Input.GetButton("Fire2") && TempoPizza == 0.5f)
             {
+                audio.clip = jogou;
+                audio.Play();
                 GetComponentInParent<PlayerController>().anim.SetBool("LancaDir", true);
                 SpawnaPizzaDireita();
                 TempoPizza = 0f;
