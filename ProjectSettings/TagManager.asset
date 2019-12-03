@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pizza
   - missao
+  - predio
   layers:
   - Default
   - TransparentFX
