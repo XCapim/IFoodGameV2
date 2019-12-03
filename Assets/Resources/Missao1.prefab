@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -3695368752834258095}
   - component: {fileID: 6508511057153887708}
   - component: {fileID: 3329602968343212702}
+  - component: {fileID: 8424427362926538284}
   m_Layer: 0
   m_Name: Missao1
   m_TagString: missao
@@ -48,7 +49,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.13
+  m_Radius: 1.63
 --- !u!212 &6508511057153887708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,3 +120,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8424427362926538284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165393989575080387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7045d15fb60e6f4eae6ff7faff885b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Premio: 0

@@ -6,7 +6,7 @@ public class Pizza : MonoBehaviour
 {
     
     public Rigidbody2D rb;
-    public float Premio35;
+   
 
 
   
@@ -15,7 +15,7 @@ public class Pizza : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Premio35 = 35f;
+       
     }
 
     // Update is called once per frame
@@ -23,19 +23,19 @@ public class Pizza : MonoBehaviour
     {
         transform.Rotate(0, 0, 0.9f);
       
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("missao")&& GameController.instancia.Missao1Ativo)
+        if (collision.gameObject.CompareTag("missao"))
         {
-            GameController.instancia.Dineiro += Premio35;
-            GameController.instancia.Missao1Ativo = false;
-            GameController.instancia.ganhando = true;
-            GameController.instancia.QuantidadeDeEntregas++;
+            Destroy(this.gameObject);
         }
     }
+
+   
+
+
+
 
 }

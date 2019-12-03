@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public static GameController instancia = null;
-    public bool SpawnaMission1,Missao1Ativo,ganhando,AtivaTempo;
-    public float Dineiro,Tempo,QuantidadeDeEntregas,Atropelados;
-    public Text IconeGanhandoGrana; 
+    public bool SpawnaMission1,Missao1Ativo,AtivaTempo;
+    public float Dineiro,Tempo,QuantidadeDeEntregas,Atropelados,AtualPremio;
+    public float[] Premios;
 
 
     private void Awake()
@@ -22,8 +22,6 @@ public class GameController : MonoBehaviour
         QuantidadeDeEntregas = 0f;
         Tempo = 0f;
         AtivaTempo = false;
-        IconeGanhandoGrana.enabled = false;
-        ganhando = false;
         Dineiro = 0f;
         SpawnaMission1 = true;
         Missao1Ativo = true;
@@ -37,30 +35,7 @@ public class GameController : MonoBehaviour
             Missao1();
         }
 
-
-        if (ganhando)
-        {
-
-           GameController.instancia.IconeGanhandoGrana.enabled = true;
-            IconeGanhandoGrana.transform.position = new Vector3(IconeGanhandoGrana.transform.position.x, IconeGanhandoGrana.transform.position.y + 0.01f, 0);
-            IconeGanhandoGrana.color = new Color(IconeGanhandoGrana.color.r, IconeGanhandoGrana.color.g, IconeGanhandoGrana.color.b, IconeGanhandoGrana.color.a - 0.5f * Time.deltaTime);
-            IconeGanhandoGrana.text = "$" + FindObjectOfType<Pizza>().Premio35;
-            AtivaTempo = true;
-            if (AtivaTempo)
-            {
-                Tempo += Time.deltaTime;
-               
-            }
-
-            if (Tempo >= 3)
-            {
-                IconeGanhandoGrana.enabled = false;
-            }
-        }
-            
-
-     
-        
+                   
         
     }
 

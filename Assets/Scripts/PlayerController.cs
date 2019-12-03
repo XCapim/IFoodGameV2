@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instancia = null;
     float Speed,Curva,Tempo;
-    bool Parado, AtivaTempo,Direita,Esquerda;
+    bool Parado, AtivaTempo;
     public Animator anim;
     public Rigidbody2D rb;
     
@@ -22,12 +22,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Esquerda = true;
-        Direita = true;
+        
         AtivaTempo = false;
         Parado = false;
         Tempo = 0f;
-        
         Speed = 0f;
         Curva = 100f;
         anim = GetComponent<Animator>();
@@ -82,10 +80,10 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetAxis("Horizontal") == 0)
-            {
-                 anim.SetBool("Direita", false);
-                 anim.SetBool("Esqueda", false);
-             }
+        {
+             anim.SetBool("Direita", false);
+             anim.SetBool("Esqueda", false);
+        }
        
       
     }
