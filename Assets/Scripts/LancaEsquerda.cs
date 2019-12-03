@@ -33,8 +33,13 @@ public class LancaEsquerda : MonoBehaviour
             if (Input.GetButton("Jump") && TempoPizza == 1f)
             {
                 SpawnaPizzaEsquerda();
+                GetComponentInParent<PlayerController>().anim.SetBool("LancaEsq", true);
                 TempoPizza = 0f;
                 AtivaTempoPizza = true;
+            }
+            else
+            {
+                GetComponentInParent<PlayerController>().anim.SetBool("LancaEsq", false);
             }
         }
     }
