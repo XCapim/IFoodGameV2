@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Missao1 : MonoBehaviour
 {
-   public float Premio;
+   
     public bool liga;
+    public AudioSource audio;
+    public AudioClip ThankYou;
 
     // Start is called before the first frame update
     void Start()
     {
-        Premio = 35f;
+        
         liga = false;
     }
 
@@ -29,6 +31,8 @@ public class Missao1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("pizza") && GameController.instancia.Missao1Ativo)
         {
+            audio.clip = ThankYou;
+            audio.Play();
             liga = true;
             GameController.instancia.AtualPremio=GameController.instancia.Premios[Random.Range(0, 5)];
             GameController.instancia.Dineiro += GameController.instancia.AtualPremio;
