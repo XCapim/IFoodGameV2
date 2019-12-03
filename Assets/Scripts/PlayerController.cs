@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(Speed);
 
+
         if (Input.GetAxis("Vertical")>=0.1f)
         {   
             Speed = 10f;
@@ -121,8 +122,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("predio"))
         {
+
             Speed = 0;
+            rb.AddForce(Vector2.down * 50f);
         }
     }
+
+
 
 }
