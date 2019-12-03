@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2578033481967212022}
   m_Layer: 0
   m_Name: Missao2
-  m_TagString: Untagged
+  m_TagString: missao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -23,4 +23,15 @@ public class Pizza : MonoBehaviour
       
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("missao")&& GameController.instancia.Missao1Ativo)
+        {
+            GameController.instancia.Dineiro += 35f;
+            GameController.instancia.Missao1Ativo = false;
+        }
+    }
+
 }

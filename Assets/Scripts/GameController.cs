@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    bool SpawnaMission1;
+    public static GameController instancia = null;
+    public bool SpawnaMission1,Missao1Ativo;
+    public float Dineiro;
 
+
+    private void Awake()
+    {
+        if (instancia == null) instancia = this;
+        else if (instancia != this) Destroy(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
+        Dineiro = 0f;
         SpawnaMission1 = true;
+        Missao1Ativo = true;
     }
 
     // Update is called once per frame
@@ -19,6 +29,10 @@ public class GameController : MonoBehaviour
         {
             Missao1();
         }
+
+       
+
+     
         
         
     }

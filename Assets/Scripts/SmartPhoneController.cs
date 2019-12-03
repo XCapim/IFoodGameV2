@@ -66,7 +66,7 @@ public class SmartPhoneController : MonoBehaviour
     {
         Panel.SetActive(true);
         NomeApp.text = "Seu Dinheiro";
-        TextoValor.text = "$";
+        TextoValor.text = "$ " + GameController.instancia.Dineiro;
         Seta.SetActive(false);
     }
 
@@ -79,7 +79,12 @@ public class SmartPhoneController : MonoBehaviour
     {
         Panel.SetActive(true);
         NomeApp.text = "Entregas";
-        TextoValor.text = "";
+        
+
+        if (GameController.instancia.Missao1Ativo)
+        {
+            TextoValor.text = "Entrega do Pedro $35";
+        }
         Seta.SetActive(false);
     }
 
@@ -89,6 +94,10 @@ public class SmartPhoneController : MonoBehaviour
         NomeApp.text = "Rota";
         TextoValor.text = "";
         Seta.SetActive(true);
+
+     
     }
+
+   
 
 }
