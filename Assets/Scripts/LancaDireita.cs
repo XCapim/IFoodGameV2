@@ -31,7 +31,7 @@ public class LancaDireita : MonoBehaviour
             TempoPizza = 1f;
             AtivaTempoPizza = false;
 
-            if (Input.GetButton("Fire3") && TempoPizza == 1f)
+            if (Input.GetButton("Fire2") && TempoPizza == 1f)
             {
                 SpawnaPizzaDireita();
                 GetComponentInParent<PlayerController>().anim.SetBool("LancaDir", true);

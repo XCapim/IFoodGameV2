@@ -34,6 +34,7 @@ public class Pizza : MonoBehaviour
             GameController.instancia.Dineiro += Premio35;
             GameController.instancia.Missao1Ativo = false;
             GameController.instancia.ganhando = true;
+            GameController.instancia.QuantidadeDeEntregas++;
         }
     }
 

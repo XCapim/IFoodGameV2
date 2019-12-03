@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instancia = null;
     public bool SpawnaMission1,Missao1Ativo,ganhando,AtivaTempo;
-    public float Dineiro,Tempo;
+    public float Dineiro,Tempo,QuantidadeDeEntregas,Atropelados;
     public Text IconeGanhandoGrana; 
 
 
@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QuantidadeDeEntregas = 0f;
         Tempo = 0f;
         AtivaTempo = false;
         IconeGanhandoGrana.enabled = false;
@@ -72,11 +73,5 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void Grana()
-    {
-
-        
-       
-        
-    }
+  
 }
