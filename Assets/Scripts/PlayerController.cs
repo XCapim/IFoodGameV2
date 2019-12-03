@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instancia = null;
     float Speed,Curva,Tempo;
-    bool Parado, AtivaTempo;
-    Animator anim;
+    bool Parado, AtivaTempo,Direita,Esquerda;
+    public Animator anim;
     public Rigidbody2D rb;
     
 
@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Esquerda = true;
+        Direita = true;
         AtivaTempo = false;
         Parado = false;
         Tempo = 0f;
@@ -80,29 +81,16 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(new Vector3(0, 0,1) * Time.deltaTime * Curva,Space.World);
         }
 
-       if(Input.GetAxis("Horizontal") == 0)
-        {
-            anim.SetBool("Direita", false);
-            anim.SetBool("Esqueda", false);
-        }
-
-        if (Input.GetButton("Fire3"))
-        {
-            anim.SetBool("LancaDir", true);
-        }
-        else
-        {
-            anim.SetBool("LancaDir", false);
-        }
+        if (Input.GetAxis("Horizontal") == 0)
+            {
+                 anim.SetBool("Direita", false);
+                 anim.SetBool("Esqueda", false);
+             }
        
       
     }
 
-    private void Update()
-    {
-  
-       
-    }
+
 
     private void SpawnandoFumaca()
     {
