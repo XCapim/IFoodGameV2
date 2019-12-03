@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    bool mission1;
+    bool SpawnaMission1;
 
     // Start is called before the first frame update
     void Start()
     {
-        mission1 = true;
+        SpawnaMission1 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mission1)
+        if (SpawnaMission1)
         {
             Missao1();
         }
@@ -25,10 +25,10 @@ public class GameController : MonoBehaviour
 
     private void Missao1()
     {
-        if (mission1)
+        if (SpawnaMission1)
         {
             GameObject Missao = Instantiate(Resources.Load("Missao1"), new Vector3(-11.42f, 42.5f, 0f), Quaternion.identity) as GameObject;
-            mission1 = false;
+            SpawnaMission1 = false;
         }
     }
 }
