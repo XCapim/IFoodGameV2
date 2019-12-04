@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instancia = null;
-    float Speed,Curva,Tempo;
+    float Speed, Curva, Tempo;
     bool Parado, AtivaTempo;
     public Animator anim;
     public Rigidbody2D rb;
     public AudioSource audio;
     public AudioClip parado, andando;
-    
+
 
 
 
@@ -20,18 +20,18 @@ public class PlayerController : MonoBehaviour
         if (instancia == null) instancia = this;
         else if (instancia != this) Destroy(this.gameObject);
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
         AtivaTempo = false;
         Parado = false;
         Tempo = 0f;
         Speed = 0f;
         Curva = 100f;
         anim = GetComponent<Animator>();
-        
+
     }
 
     // Update is called once per frame
@@ -40,32 +40,41 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+        if (audio.isPlaying == false)
         {
-            
-            if (audio.isPlaying == false)
-            {
-                audio.clip = parado;
-                audio.Play();
-            }
-               
-            
+          
+            audio.Play();
         }
-            
-        
-        
-            
-        
 
-        if (Input.GetAxis("Vertical")>0f)
-        {   
+
+
+
+            if( Parado)
+            {
+            audio.clip = parado;
+            }
+
+            else if( Parado == false)
+             {
+
+                audio.clip = andando;
+             }
+
+
+
+
+
+
+        if (Input.GetAxis("Vertical") > 0f)
+        {
             Speed = 10f;
             rb.velocity = transform.up * Speed;
+            
             SpawnandoFumaca();
 
-            if(Input.GetAxis("Vertical") >0f && Parado==true)
+            if (Input.GetAxis("Vertical") > 0f && Parado == true)
             {
-                GameObject Fumaca = Instantiate(Resources.Load("Fumaca"),transform.position, Quaternion.identity) as GameObject;
+                GameObject Fumaca = Instantiate(Resources.Load("Fumaca"), transform.position, Quaternion.identity) as GameObject;
                 Parado = false;
             }
         }
@@ -74,50 +83,58 @@ public class PlayerController : MonoBehaviour
         {
             Speed = -5f;
             rb.velocity = transform.up * Speed;
+          
+            Parado = true;
         }
 
-        else if(Input.GetAxis("Vertical") == 0)
+        else if (Input.GetAxis("Vertical") == 0)
         {
             Speed = 0f;
             rb.velocity = transform.up * Speed;
             Parado = true;
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", false);
-        }     
-               
-    
+        }
+
+
         if (Input.GetAxis("Horizontal") > 0f)
         {
             anim.SetBool("Esqueda", false);
             anim.SetBool("Direita", true);
-            transform.Rotate(new Vector3(0,0,-1)* Time.deltaTime* Curva,Space.World);
+            transform.Rotate(new Vector3(0, 0, -1) * Time.deltaTime * Curva, Space.World);
+      
+
 
         }
         else if (Input.GetAxis("Horizontal") < 0f)
         {
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", true);
-            transform.Rotate(new Vector3(0, 0,1) * Time.deltaTime * Curva,Space.World);
+            transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * Curva, Space.World);
+        
+
 
         }
 
         else if (Input.GetAxis("Horizontal") == 0)
         {
-            
+
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", false);
             transform.Rotate(new Vector3(0, 0, 0), Space.Self);
-            
-        }
-       
       
+
+
+        }
+
+
     }
 
 
 
     private void SpawnandoFumaca()
     {
-        float TempoSpawn=1.5f;
+        float TempoSpawn = 1.5f;
 
         if (Parado == false)
         {
@@ -133,7 +150,7 @@ public class PlayerController : MonoBehaviour
             Tempo += Time.deltaTime;
         }
 
-        if(Tempo>= TempoSpawn)
+        if (Tempo >= TempoSpawn)
         {
             GameObject Fumaca = Instantiate(Resources.Load("Fumaca"), transform.position, Quaternion.identity) as GameObject;
             Tempo = 0f;
