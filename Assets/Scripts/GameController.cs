@@ -33,23 +33,16 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ComparaPosicaoMouse();
+
         if (SpawnaMission1)
         {
             Missao1();
         }
 
-        Debug.Log(Input.mousePosition);
+        
 
-        if (Input.mousePosition.x >= LimeteMouse.transform.position.x)
-        {
-            FindObjectOfType<LancaDireita>().AtivaJogarPizza = false;
-            FindObjectOfType<LancaEsquerda>().AtivaLancaPizza = false;
-        }
-        else
-        {
-            FindObjectOfType<LancaDireita>().AtivaJogarPizza = true;
-            FindObjectOfType<LancaEsquerda>().AtivaLancaPizza = true;
-        }
+      
         
     }
 
@@ -59,6 +52,20 @@ public class GameController : MonoBehaviour
         {
             GameObject Missao = Instantiate(Resources.Load("Missao1"), new Vector3(-11.42f, 42.5f, 0f), Quaternion.identity) as GameObject;
             SpawnaMission1 = false;
+        }
+    }
+
+    private void ComparaPosicaoMouse()
+    {
+        if (Input.mousePosition.x >= LimeteMouse.transform.position.x)
+        {
+            FindObjectOfType<LancaDireita>().AtivaJogarPizza = false;
+            FindObjectOfType<LancaEsquerda>().AtivaLancaPizza = false;
+        }
+        else
+        {
+            FindObjectOfType<LancaDireita>().AtivaJogarPizza = true;
+            FindObjectOfType<LancaEsquerda>().AtivaLancaPizza = true;
         }
     }
 
