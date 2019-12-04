@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour
 {
     public static GameController instancia = null;
     public bool SpawnaMission1,Missao1Ativo,AtivaTempo;
-    public float Dineiro,Tempo,QuantidadeDeEntregas,Atropelados,AtualPremio;
+    public float Dineiro,Tempo,QuantidadeDeEntregas,Atropelados,AtualPremio,AtualPerdePremio;
     public float[] Premios;
+    public float[] PerdePremio;
 
 
     private void Awake()
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Atropelados = 0f;
         QuantidadeDeEntregas = 0f;
         Tempo = 0f;
         AtivaTempo = false;

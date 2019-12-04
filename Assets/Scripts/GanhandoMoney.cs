@@ -67,6 +67,6 @@ public class GanhandoMoney : MonoBehaviour
 
    void AttText()
     {
-        dolla.text = "$" + GameController.instancia.AtualPremio.ToString();
+        dolla.text = "+$" + GameController.instancia.AtualPremio.ToString();
     }
 }
