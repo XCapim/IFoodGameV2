@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LancaDireita : MonoBehaviour
 {
-     bool AtivaTempoPizza;
+     public bool AtivaTempoPizza,AtivaJogarPizza;
     float TempoPizza,velocidade;
     public AudioSource audioDir;
     public AudioClip jogou;
@@ -15,6 +15,7 @@ public class LancaDireita : MonoBehaviour
     {
         TempoPizza = 0f;
         AtivaTempoPizza = true;
+        AtivaJogarPizza = true;
         velocidade = 20f;
     }
 
@@ -33,7 +34,7 @@ public class LancaDireita : MonoBehaviour
             TempoPizza = 0.5f;
             AtivaTempoPizza = false;
 
-            if (Input.GetButton("Fire2") && TempoPizza == 0.5f)
+            if (Input.GetButton("Fire2") && TempoPizza == 0.5f && AtivaJogarPizza)
             {
                 audioDir.clip = jogou;
                 audioDir.Play();
