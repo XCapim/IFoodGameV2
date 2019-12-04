@@ -134,9 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liga: 0
-  audio: {fileID: 9001941557054767629}
+  audioM: {fileID: 9001941557054767629}
   ThankYou: {fileID: 8300000, guid: 53a040f89edb44c45a4d37bb4795e0df, type: 3}
-  DinDin: {fileID: 8300000, guid: e2337ea16ebae7343b06631422b879c3, type: 3}
 --- !u!82 &9001941557054767629
 AudioSource:
   m_ObjectHideFlags: 0

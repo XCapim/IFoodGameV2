@@ -6,7 +6,7 @@ public class Missao1 : MonoBehaviour
 {
    
     public bool liga;
-    public AudioSource audio;
+    public AudioSource audioM;
     public AudioClip ThankYou;
 
     // Start is called before the first frame update
@@ -32,8 +32,8 @@ public class Missao1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("pizza") && GameController.instancia.Missao1Ativo)
         {
-            audio.clip = ThankYou;
-            audio.Play();
+            audioM.clip = ThankYou;
+            audioM.Play();
             liga = true;
             GameController.instancia.AtualPremio=GameController.instancia.Premios[Random.Range(0, 5)];
             GameController.instancia.Dineiro += GameController.instancia.AtualPremio;

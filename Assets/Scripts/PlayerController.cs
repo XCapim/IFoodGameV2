@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     bool Parado, AtivaTempo;
     public Animator anim;
     public Rigidbody2D rb;
-    public AudioSource audio;
+    public AudioSource audioSS;
     public AudioClip parado, andando;
 
 
@@ -40,10 +40,10 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (audio.isPlaying == false)
+        if (audioSS.isPlaying == false)
         {
           
-            audio.Play();
+            audioSS.Play();
         }
 
 
@@ -51,13 +51,13 @@ public class PlayerController : MonoBehaviour
 
             if( Parado)
             {
-            audio.clip = parado;
+            audioSS.clip = parado;
             }
 
             else if( Parado == false)
              {
 
-                audio.clip = andando;
+                audioSS.clip = andando;
              }
 
 

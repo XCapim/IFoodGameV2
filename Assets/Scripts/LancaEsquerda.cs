@@ -6,7 +6,7 @@ public class LancaEsquerda : MonoBehaviour
 {
     bool AtivaTempoPizza;
     float TempoPizza,velocidade;
-    public AudioSource audio;
+    public AudioSource audioEsq;
     public AudioClip jogou;
 
     // Start is called before the first frame update
@@ -34,8 +34,8 @@ public class LancaEsquerda : MonoBehaviour
 
             if (Input.GetButton("Fire1") && TempoPizza == 0.5f)
             {
-                audio.clip = jogou;
-                audio.Play();
+                audioEsq.clip = jogou;
+                audioEsq.Play();
                 GetComponentInParent<PlayerController>().anim.SetBool("LancaEsq", true);
                 SpawnaPizzaEsquerda();
                 TempoPizza = 0f;

@@ -6,7 +6,7 @@ public class LancaDireita : MonoBehaviour
 {
      bool AtivaTempoPizza;
     float TempoPizza,velocidade;
-    public AudioSource audio;
+    public AudioSource audioDir;
     public AudioClip jogou;
 
 
@@ -35,8 +35,8 @@ public class LancaDireita : MonoBehaviour
 
             if (Input.GetButton("Fire2") && TempoPizza == 0.5f)
             {
-                audio.clip = jogou;
-                audio.Play();
+                audioDir.clip = jogou;
+                audioDir.Play();
                 GetComponentInParent<PlayerController>().anim.SetBool("LancaDir", true);
                 SpawnaPizzaDireita();
                 TempoPizza = 0f;

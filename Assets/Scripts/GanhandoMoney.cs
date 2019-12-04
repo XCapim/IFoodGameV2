@@ -8,7 +8,7 @@ public class GanhandoMoney : MonoBehaviour
     public static GanhandoMoney instancia = null;
     public GameObject Dollar;
     public Text dolla;
-    public AudioSource audio;
+    public AudioSource audioD;
     public AudioClip DinDin;
     public bool ativaTempo,Tocar;
     public float tempo;
@@ -57,8 +57,8 @@ public class GanhandoMoney : MonoBehaviour
 
         if (Tocar)
         {
-            audio.clip = DinDin;
-            audio.Play();
+            audioD.clip = DinDin;
+            audioD.Play();
             Tocar = false;
         }
 

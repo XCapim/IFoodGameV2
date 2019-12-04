@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class Radio : MonoBehaviour
 {
-    public AudioSource audio;
+    public static Radio instancia=null;
+    public AudioSource audioS;
     public AudioClip Rap,Seum,cap4,vinil,toda,kille,hear,Datena;
     public float NumeroMusicas;
     public bool PausePlay;
 
+
+    private void Awake()
+    {
+        if (instancia == null) instancia = this;
+        else if (instancia != this) Destroy(this.gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        
         PausePlay = true;
         NumeroMusicas = 0;
     }
@@ -20,11 +29,11 @@ public class Radio : MonoBehaviour
     void Update()
     {
 
-        if(!audio.isPlaying)
+        if(!audioS.isPlaying)
         {
             if (PausePlay)
             {
-                audio.Play();
+                audioS.Play();
             }
             
         }
@@ -32,53 +41,53 @@ public class Radio : MonoBehaviour
         {
             if (!PausePlay)
             {
-                audio.Pause();
+                audioS.Pause();
             }
             if (NumeroMusicas == 0)
             {
              
-                 audio.clip = Seum;              
+                 audioS.clip = Seum;              
             }
 
             else if (NumeroMusicas == 1)
             {
-                audio.clip = Rap;
+                audioS.clip = Rap;
             }
 
             else if (NumeroMusicas == 2)
             {
-                audio.clip = cap4;
+                audioS.clip = cap4;
             }
             else if (NumeroMusicas == 3)
             {
-                audio.clip = vinil;
+                audioS.clip = vinil;
             }
             else if (NumeroMusicas == 4)
             {
-                audio.clip = toda;
+                audioS.clip = toda;
             }
             else if (NumeroMusicas == 5)
             {
-                audio.clip = kille;
+                audioS.clip = kille;
             }
             else if (NumeroMusicas == 6)
             {
-                audio.clip = hear;
+                audioS.clip = hear;
             }
 
             else if (NumeroMusicas == 7)
             {
-                audio.clip = Datena;
+                audioS.clip = Datena;
             }
         }
 
         if (NumeroMusicas < 0)
         {
-            NumeroMusicas = 7;
-        }
-        else if(NumeroMusicas > 7)
-        {
             NumeroMusicas = 0;
+        }
+        else if (NumeroMusicas > 7)
+        {
+            NumeroMusicas = 7;
         }
 
 

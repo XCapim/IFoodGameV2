@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource audioSSS;
     public AudioClip morto;
     public Animator anim;
     public Collider2D Npc;
@@ -57,8 +57,8 @@ public class NPC : MonoBehaviour
             quant =false;
             anim.SetBool("Morto", true);
             Npc.enabled = false;
-            audio.clip = morto;
-            audio.Play();
+            audioSSS.clip = morto;
+            audioSSS.Play();
             GameController.instancia.Atropelados++;
             PerdeDollar.SetActive(true);
             GameController.instancia.AtualPerdePremio = GameController.instancia.PerdePremio[Random.Range(0, 4)];
@@ -70,8 +70,8 @@ public class NPC : MonoBehaviour
             quant = false;
             anim.SetBool("Morto", true);
             Npc.enabled = false;
-            audio.clip = morto;
-            audio.Play();
+            audioSSS.clip = morto;
+            audioSSS.Play();
             GameController.instancia.Atropelados++;
             PerdeDollar.SetActive(true);
             GameController.instancia.AtualPerdePremio=GameController.instancia.PerdePremio[Random.Range(0, 4)];
