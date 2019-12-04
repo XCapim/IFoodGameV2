@@ -8,7 +8,9 @@ public class GanhandoMoney : MonoBehaviour
     public static GanhandoMoney instancia = null;
     public GameObject Dollar;
     public Text dolla;
-    public bool ativaTempo;
+    public AudioSource audio;
+    public AudioClip DinDin;
+    public bool ativaTempo,Tocar;
     public float tempo;
 
 
@@ -22,6 +24,7 @@ public class GanhandoMoney : MonoBehaviour
     {
         Dollar.SetActive(false);
         ativaTempo = false;
+        Tocar = false;
         tempo = 0f;
        
 
@@ -40,12 +43,23 @@ public class GanhandoMoney : MonoBehaviour
             tempo += Time.deltaTime;
         }
 
+       
+
         if (tempo >= 3f)
-        { 
+        {
+           
            FindObjectOfType<Missao1>().liga = false;
            Dollar.SetActive(false);
            ativaTempo = false;
            tempo = 0;
+           
+        }
+
+        if (Tocar)
+        {
+            audio.clip = DinDin;
+            audio.Play();
+            Tocar = false;
         }
 
 

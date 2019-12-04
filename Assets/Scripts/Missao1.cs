@@ -21,8 +21,9 @@ public class Missao1 : MonoBehaviour
     {
         if (liga)
         {
-           GanhandoMoney.instancia.Dollar.SetActive(true);
-           GanhandoMoney.instancia.ativaTempo = true;
+        
+            GanhandoMoney.instancia.Dollar.SetActive(true);  
+            GanhandoMoney.instancia.ativaTempo = true;
         }
     }
 
@@ -36,6 +37,7 @@ public class Missao1 : MonoBehaviour
             liga = true;
             GameController.instancia.AtualPremio=GameController.instancia.Premios[Random.Range(0, 5)];
             GameController.instancia.Dineiro += GameController.instancia.AtualPremio;
+            GanhandoMoney.instancia.Tocar = true;
             GameController.instancia.Missao1Ativo = false;
             GameController.instancia.QuantidadeDeEntregas++;
             

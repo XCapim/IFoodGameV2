@@ -27,7 +27,7 @@ public class Pizza : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("missao"))
+        if (collision.gameObject.CompareTag("missao")|| collision.gameObject.CompareTag("predio"))
         {
             Destroy(this.gameObject);
         }
