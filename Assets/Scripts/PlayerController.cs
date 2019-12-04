@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     bool Parado, AtivaTempo;
     public Animator anim;
     public Rigidbody2D rb;
+    public AudioSource audio;
+    public AudioClip parado, andando;
     
 
 
@@ -33,11 +35,26 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
-        //Debug.Log(Input.GetAxis("Horizontal")+Input.GetAxis("Vertical"));
 
+
+        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+        {
+            
+            if (audio.isPlaying == false)
+            {
+                audio.clip = parado;
+                audio.Play();
+            }
+               
+            
+        }
+            
+        
+        
+            
         
 
         if (Input.GetAxis("Vertical")>0f)
@@ -67,16 +84,13 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", false);
         }     
-           
-        
+               
     
         if (Input.GetAxis("Horizontal") > 0f)
         {
             anim.SetBool("Esqueda", false);
             anim.SetBool("Direita", true);
-            //transform.rotation = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
             transform.Rotate(new Vector3(0,0,-1)* Time.deltaTime* Curva,Space.World);
-            Debug.Log("TESTEDireita");
 
         }
         else if (Input.GetAxis("Horizontal") < 0f)
@@ -84,16 +98,15 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Direita", false);
             anim.SetBool("Esqueda", true);
             transform.Rotate(new Vector3(0, 0,1) * Time.deltaTime * Curva,Space.World);
-            Debug.Log("TESTE");
 
         }
 
         else if (Input.GetAxis("Horizontal") == 0)
         {
-             anim.SetBool("Direita", false);
-             anim.SetBool("Esqueda", false);
+            
+            anim.SetBool("Direita", false);
+            anim.SetBool("Esqueda", false);
             transform.Rotate(new Vector3(0, 0, 0), Space.Self);
-            //transform.localEulerAngles = new Vector3(0, 0, );
             
         }
        
@@ -128,24 +141,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
 
-        if (collision.gameObject.CompareTag("predio"))
-        {
-
-
-            
-
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-
-        //transform.Rotate(0f, 0f, 0f);
-    }
 
 
 
