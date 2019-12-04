@@ -2976,6 +2976,12 @@ MonoBehaviour:
   audio: {fileID: 1159552658}
   Rap: {fileID: 8300000, guid: e6a5fdb1c000f514a88df83a5c9debbd, type: 3}
   Seum: {fileID: 8300000, guid: 158265c87bf2d9c40bc4724d304689c6, type: 3}
+  cap4: {fileID: 8300000, guid: 7fa27c9af1bd7ae4dbdd52e8092df1ee, type: 3}
+  vinil: {fileID: 8300000, guid: 54c622785e3c94242bcc96f1c366c7da, type: 3}
+  toda: {fileID: 8300000, guid: 9234ce6c4c1e57e41bb6c36ccb9f8fdb, type: 3}
+  kille: {fileID: 8300000, guid: 78bbefceaa2d1eb4d87ae16b60bfb201, type: 3}
+  hear: {fileID: 8300000, guid: f94a8487b999b854d860b66fb32974c9, type: 3}
+  Datena: {fileID: 8300000, guid: 8317cd5d793884542a155ad935986444, type: 3}
   NumeroMusicas: 0
   PausePlay: 0
 --- !u!82 &1159552658
@@ -2990,7 +2996,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.171
+  m_Volume: 0.381
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3489,7 +3495,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.49
+  m_Volume: 0.241
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4862,7 +4868,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.49
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 0
   Mute: 0
