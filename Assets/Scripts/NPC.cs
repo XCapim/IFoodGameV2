@@ -29,19 +29,16 @@ public class NPC : MonoBehaviour
         
         if (ativa)
         {
-            tempo += Time.deltaTime;
-            
+            tempo += Time.deltaTime;  
         }
 
         if (tempo >= 2f)
         {
-            PerdeDollar.SetActive(false);
-            ativa = false;
-            tempo = 0;
+            PerdeDollar.SetActive(false);      
             Destroy(this.gameObject);
         }
 
-        attText();
+        
 
     }
 
@@ -49,36 +46,35 @@ public class NPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-            anim.SetBool("Morto", true);
-            Npc.enabled = false;
-            audioSSS.clip = morto;
-            audioSSS.Play();
-            GameController.instancia.Atropelados++;
-            PerdeDollar.SetActive(true);
-            GameController.instancia.AtualPerdePremio = GameController.instancia.PerdePremio[Random.Range(0, 4)];
-            GameController.instancia.Dineiro -= GameController.instancia.AtualPerdePremio;
-            ativa = true;
+           
+            PerdePremios();      
         }
         else if (collision.gameObject.CompareTag("pizza"))
-        {
-            
-            anim.SetBool("Morto", true);
-            Npc.enabled = false;
-            audioSSS.clip = morto;
-            audioSSS.Play();
-            GameController.instancia.Atropelados++;
-            PerdeDollar.SetActive(true);
-            GameController.instancia.AtualPerdePremio=GameController.instancia.PerdePremio[Random.Range(0, 4)];
-            GameController.instancia.Dineiro -= GameController.instancia.AtualPerdePremio;
-            ativa = true;
-
+        {      
+         
+            PerdePremios();
+         
         }
     }
 
 
     void attText()
     {
+       
         PerdendoDolla.text = "-$ " + GameController.instancia.AtualPerdePremio.ToString();
+    }
+
+     void PerdePremios()
+    {
+        anim.SetBool("Morto", true);
+        Npc.enabled = false;
+        audioSSS.clip = morto;
+        audioSSS.Play();
+        GameController.instancia.Atropelados++;
+        PerdeDollar.SetActive(true);
+        GameController.instancia.AtualPerdePremio = GameController.instancia.PerdePremio[Random.Range(0, 4)];
+        GameController.instancia.Dineiro -= GameController.instancia.AtualPerdePremio;
+        ativa = true;
+        attText();
     }
 }

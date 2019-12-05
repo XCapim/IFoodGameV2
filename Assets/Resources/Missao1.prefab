@@ -174,6 +174,8 @@ GameObject:
   - component: {fileID: 3329602968343212702}
   - component: {fileID: 8424427362926538284}
   - component: {fileID: 9001941557054767629}
+  - component: {fileID: 271080154889258746}
+  - component: {fileID: 5801713027112192207}
   m_Layer: 0
   m_Name: Missao1
   m_TagString: missao
@@ -271,7 +273,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5165393989575080387}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -296,16 +298,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7045d15fb60e6f4eae6ff7faff885b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locais: []
-  localAtual: 0
-  velocidade: 10
+  anima: {fileID: 271080154889258746}
   liga: 0
   ContaCollider: 0
   andando: 0
+  morto: 0
+  ativa: 0
   audioM: {fileID: 9001941557054767629}
   ThankYou: {fileID: 8300000, guid: 53a040f89edb44c45a4d37bb4795e0df, type: 3}
+  mortu: {fileID: 8300000, guid: ddc3834a3292a17448be8c18ae7f807f, type: 3}
   missaum: {fileID: -3695368752834258095}
-  anim: {fileID: 0}
 --- !u!82 &9001941557054767629
 AudioSource:
   m_ObjectHideFlags: 0
@@ -402,3 +404,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &271080154889258746
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165393989575080387}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aef9de93b31f14649828a99a570faab8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &5801713027112192207
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165393989575080387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.11089139, y: 0.055445194}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.9600003, y: 4.6200004}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1857458, y: 3.5110936}
+  m_EdgeRadius: 0
