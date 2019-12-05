@@ -5,37 +5,32 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+   
     public AudioSource audioSSS;
     public AudioClip morto;
     public Animator anim;
     public Collider2D Npc;
     public Text PerdendoDolla;
     public GameObject PerdeDollar;
-    bool ativa;
+    public bool ativa;
     float tempo;
 
-    // Start is called before the first frame update
     void Start()
     {
-       
         ativa = false;
         PerdeDollar.SetActive(false);
         tempo = 0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
-        
+ 
         anim.SetBool("Andando", true);
         
-
-
         if (ativa)
         {
             tempo += Time.deltaTime;
+            
         }
 
         if (tempo >= 2f)
@@ -43,6 +38,7 @@ public class NPC : MonoBehaviour
             PerdeDollar.SetActive(false);
             ativa = false;
             tempo = 0;
+            Destroy(this.gameObject);
         }
 
         attText();
@@ -54,7 +50,6 @@ public class NPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             
-           
             anim.SetBool("Morto", true);
             Npc.enabled = false;
             audioSSS.clip = morto;
