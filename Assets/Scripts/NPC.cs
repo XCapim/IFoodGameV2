@@ -11,13 +11,13 @@ public class NPC : MonoBehaviour
     public Collider2D Npc;
     public Text PerdendoDolla;
     public GameObject PerdeDollar;
-    bool quant,ativa;
+    bool ativa;
     float tempo;
 
     // Start is called before the first frame update
     void Start()
     {
-        quant = true;
+       
         ativa = false;
         PerdeDollar.SetActive(false);
         tempo = 0f;
@@ -54,7 +54,7 @@ public class NPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             
-            quant =false;
+           
             anim.SetBool("Morto", true);
             Npc.enabled = false;
             audioSSS.clip = morto;
@@ -67,7 +67,7 @@ public class NPC : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("pizza"))
         {
-            quant = false;
+            
             anim.SetBool("Morto", true);
             Npc.enabled = false;
             audioSSS.clip = morto;
