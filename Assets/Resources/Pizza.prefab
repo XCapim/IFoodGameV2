@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1122276141476315679}
+  pizzza: {fileID: 4469195562093739696}
 --- !u!50 &1122276141476315679
 Rigidbody2D:
   serializedVersion: 4

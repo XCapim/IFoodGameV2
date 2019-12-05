@@ -48,7 +48,7 @@ public class GanhandoMoney : MonoBehaviour
         if (tempo >= 3f)
         {
            
-           FindObjectOfType<Missao1>().liga = false;
+           //FindObjectOfType<Missao1>().liga = false;
            Dollar.SetActive(false);
            ativaTempo = false;
            tempo = 0;

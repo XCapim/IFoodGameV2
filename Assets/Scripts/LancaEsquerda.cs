@@ -28,12 +28,12 @@ public class LancaEsquerda : MonoBehaviour
 
 
         }
-        if (TempoPizza >= 0.5f)
+        if (TempoPizza >= 1.5f)
         {
-            TempoPizza = 0.5f;
+            TempoPizza = 1.5f;
             AtivaTempoPizza = false;
 
-            if (Input.GetButton("Fire1") && TempoPizza == 0.5f && AtivaLancaPizza)
+            if (Input.GetButton("Fire1") && TempoPizza == 1.5f && AtivaLancaPizza)
             {
                 audioEsq.clip = jogou;
                 audioEsq.Play();

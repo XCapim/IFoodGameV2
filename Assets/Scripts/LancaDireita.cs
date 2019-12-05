@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LancaDireita : MonoBehaviour
 {
-     public bool AtivaTempoPizza,AtivaJogarPizza;
+    public bool AtivaTempoPizza,AtivaJogarPizza;
     float TempoPizza,velocidade;
     public AudioSource audioDir;
     public AudioClip jogou;
+    
 
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class LancaDireita : MonoBehaviour
         AtivaTempoPizza = true;
         AtivaJogarPizza = true;
         velocidade = 20f;
+        
     }
 
     // Update is called once per frame
@@ -29,12 +31,12 @@ public class LancaDireita : MonoBehaviour
 
 
         }
-        if (TempoPizza >= 0.5f)
+        if (TempoPizza >= 1.5f)
         {
-            TempoPizza = 0.5f;
+            TempoPizza = 1.5f;
             AtivaTempoPizza = false;
 
-            if (Input.GetButton("Fire2") && TempoPizza == 0.5f && AtivaJogarPizza)
+            if (Input.GetButton("Fire2") && TempoPizza == 1.5f && AtivaJogarPizza)
             {
                 audioDir.clip = jogou;
                 audioDir.Play();

@@ -35,10 +35,10 @@ public class GameController : MonoBehaviour
     {
         ComparaPosicaoMouse();
 
-        if (SpawnaMission1)
+        /*if (SpawnaMission1)
         {
             Missao1();
-        }
+        }*/
 
         
 

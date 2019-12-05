@@ -6,6 +6,8 @@ public class Pizza : MonoBehaviour
 {
     
     public Rigidbody2D rb;
+    
+
    
 
 
@@ -15,7 +17,7 @@ public class Pizza : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-       
+        
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Pizza : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("missao")|| collision.gameObject.CompareTag("predio"))
         {
+            
             Destroy(this.gameObject);
         }
     }
