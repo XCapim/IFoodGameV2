@@ -7,7 +7,7 @@ public class SmartPhoneController : MonoBehaviour
 {
     public static SmartPhoneController instancia = null;
     public Text Tempo,TempoMinuto,Atropelado, QuantidadeDeEntregas, SaldoBancario;
-    float tempo;
+    public float tempo;
     int tempoMinuto;
 
 
@@ -35,6 +35,12 @@ public class SmartPhoneController : MonoBehaviour
         {
             tempoMinuto--;
             tempo = 60f;
+        }
+        else if (tempo >= 60f)
+        {
+            tempo = 60f;
+            tempoMinuto++;
+            tempo = 0f;
         }
 
     }

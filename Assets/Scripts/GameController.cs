@@ -35,24 +35,9 @@ public class GameController : MonoBehaviour
     {
         ComparaPosicaoMouse();
 
-        /*if (SpawnaMission1)
-        {
-            Missao1();
-        }*/
-
         
 
       
-        
-    }
-
-    private void Missao1()
-    {
-        if (SpawnaMission1)
-        {
-            GameObject Missao = Instantiate(Resources.Load("Missao1"), new Vector3(-11.42f, 42.5f, 0f), Quaternion.identity) as GameObject;
-            SpawnaMission1 = false;
-        }
     }
 
     private void ComparaPosicaoMouse()

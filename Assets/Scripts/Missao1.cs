@@ -7,18 +7,20 @@ public class Missao1 : MonoBehaviour
 {
 
 
-
+    public GameObject pizza;
     public Animator anima;
     public bool liga,ContaCollider,andando,morto,ativa;
     public AudioSource audioM;
     public AudioClip ThankYou,mortu;
     public CircleCollider2D missaum;
+    public BoxCollider2D colli;
     float tempo;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        colli.enabled = true;
+        pizza.SetActive(true);
         morto = false;
         liga = false;
         ativa = false;
@@ -36,7 +38,7 @@ public class Missao1 : MonoBehaviour
             tempo += Time.deltaTime;
         }
 
-        if (tempo >= 2.5f)
+        if (tempo >= 3f)
         {
        
             Destroy(this.gameObject);
@@ -65,6 +67,7 @@ public class Missao1 : MonoBehaviour
             GameController.instancia.Dineiro += GameController.instancia.AtualPremio;
             GanhandoMoney.instancia.Tocar = true;
             GameController.instancia.QuantidadeDeEntregas++;
+            SmartPhoneController.instancia.tempo += 3f;
             ContaCollider = false;
             
         }
@@ -86,12 +89,15 @@ public class Missao1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            colli.enabled = false;
             anima.SetBool("morto", true);
             morto = true;
             GameController.instancia.Atropelados++;
             ativa = true;
             audioM.clip = mortu;
             audioM.Play();
+            SmartPhoneController.instancia.tempo -= 8f;
+            pizza.SetActive(false);
             
         }
     }

@@ -74,6 +74,7 @@ public class NPC : MonoBehaviour
         PerdeDollar.SetActive(true);
         GameController.instancia.AtualPerdePremio = GameController.instancia.PerdePremio[Random.Range(0, 4)];
         GameController.instancia.Dineiro -= GameController.instancia.AtualPerdePremio;
+        SmartPhoneController.instancia.tempo -= 5f;
         ativa = true;
         attText();
     }
