@@ -5,14 +5,14 @@ using UnityEngine;
 public class RotaUm : MonoBehaviour
 {
     public GameObject [] locais;
-    public int localAtual=0;
+    public int localAtual;
     public float velocidade = 10f;
     float giro;
 
     // Start is called before the first frame update
     void Start()
     {
-        localAtual = 0;
+        
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class RotaUm : MonoBehaviour
     {
 
         transform.LookAt(locais[localAtual].transform);
-        transform.Rotate(0, -90, 0);
+        transform.Rotate(0,-90, 0);
 
 
         if (Vector2.Distance(transform.position, locais[localAtual].transform.position)<0.1f)

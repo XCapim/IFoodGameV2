@@ -26,10 +26,10 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-       
-           
-            anim.SetBool("Andando", true);
+
+
+        
+        anim.SetBool("Andando", true);
         
 
 
