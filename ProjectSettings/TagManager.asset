@@ -8,6 +8,7 @@ TagManager:
   - missao
   - predio
   - npc
+  - rota
   layers:
   - Default
   - TransparentFX

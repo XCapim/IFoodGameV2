@@ -26,11 +26,11 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (quant)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, 0);
+       
+       
+           
             anim.SetBool("Andando", true);
-        }
+        
 
 
         if (ativa)

@@ -24,7 +24,7 @@ public class Radio : MonoBehaviour
     {
         audioS = GetComponent<AudioSource>();
         PausePlay = true;
-        audioS.clip = Musicas[1];
+        audioS.clip = Musicas[3];
         anima = false;
         
     }
